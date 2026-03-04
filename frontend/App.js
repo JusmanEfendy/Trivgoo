@@ -19,10 +19,7 @@ const Tab = createBottomTabNavigator();
 const PublicStack = () => (
   <Stack.Navigator
     screenOptions={{
-      headerStyle: { backgroundColor: COLORS.primary },
-      headerTintColor: COLORS.textWhite,
-      headerTitleStyle: { fontWeight: '700' },
-      headerBackTitleVisible: false,
+      headerShown: false,
     }}
   >
     <Stack.Screen
