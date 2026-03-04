@@ -1,14 +1,27 @@
 import axios from 'axios';
 import { Platform } from 'react-native';
+import Constants from 'expo-constants';
 
 // Auto-detect the correct API URL based on platform
-// Web/iOS simulator: localhost works directly
-// Android emulator: 10.0.2.2 maps to host machine's localhost
-// Physical device: replace with your computer's local IP (e.g., 192.168.x.x)
+// Web: localhost works directly
+// Android/iOS physical device: use Expo's debuggerHost to get dev machine IP
 const getBaseUrl = () => {
+    if (Platform.OS === 'web') {
+        return 'http://localhost:3000/api';
+    }
+
+    // For physical devices & emulators: extract IP from Expo's debugger host
+    const debuggerHost = Constants.expoConfig?.hostUri ?? Constants.manifest?.debuggerHost;
+    if (debuggerHost) {
+        const ip = debuggerHost.split(':')[0];
+        return `http://${ip}:3000/api`;
+    }
+
+    // Fallback for Android emulator
     if (Platform.OS === 'android') {
         return 'http://10.0.2.2:3000/api';
     }
+
     return 'http://localhost:3000/api';
 };
 

@@ -56,7 +56,7 @@ trivgoo/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/trivgoo.git
+git clone https://github.com/JusmanEfendy/Trivgoo.git
 cd trivgoo
 ```
 
@@ -64,25 +64,25 @@ cd trivgoo
 
 ```bash
 cd backend
-cp .env.example .env        # Copy environment config (edit if needed)
+cp .env.example .env        # Copy environment config (lalu edit sesuai kebutuhan)
 npm install                  # Install dependencies
 ```
 
 ### 3. Setup Database
 
-Make sure MySQL is running, then execute the migration:
+Pastikan MySQL sedang berjalan, lalu jalankan migrasi:
 
 ```bash
-# Using MySQL CLI
+# Menggunakan MySQL CLI
 mysql -u root < migrations/init.sql
 
-# Or via MySQL Workbench / phpMyAdmin:
-# Open and execute the file: backend/migrations/init.sql
+# Atau via MySQL Workbench / phpMyAdmin:
+# Bukan dan Eksekusi file: backend/migrations/init.sql
 ```
 
 This will:
-- Create the `booking_engine` database
-- Create tables: `hotels`, `rooms`, `bookings`
+- Buat `booking_engine` database
+- Buat table: `hotels`, `rooms`, `bookings`
 - Seed sample data (7 hotels, 25 rooms, 3 bookings)
 
 ### 4. Start Backend Server
@@ -105,9 +105,9 @@ npm install                  # Install dependencies
 ### 6. Start Frontend
 
 ```bash
-npx expo start --web         # Run in web browser
+npx expo start --web         # Jalankan di browser
 # or
-npx expo start               # Run on mobile (scan QR with Expo Go)
+npx expo start               # Jalankan di mobile (scan QR dengan Expo Go)
 ```
 
 ---
